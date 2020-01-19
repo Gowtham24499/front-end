@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 8px;
+  font-size: 12px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  font-size: 12px;
+  font-family: arial;
+ 
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color:  #99b3ff;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #ccffff;}
+
+
+
+.tablink {
+  background-color:  #e6e6e6;
+  color: black;
+  font-family: Arial;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 8px ;
+  font-size: 13px;
+ 
+}
+
+.tablink:hover {
+  background-color: #ccebff;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Processes {background-color: white;}
+#Performance {background-color: white;}
+#App history {background-color: white;}
+#Startup {background-color: white;}
+#Users {background-color: white;}
+#Details {background-color: white;}
+#Services {background-color: white;}
+
+</style>
+</head>
+<body>
+
+
+<div class="dropdown">
+  <button class="dropbtn">File</button>
+  <div class="dropdown-content">
+    <a href="#">Run New Task</a>
+    <a href="#">Exit</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Options</button>
+  <div class="dropdown-content">
+    <a href="#">Always on top</a>
+    <a href="#">Minimise</a>
+    <a href="#">Hide when minimised</a>
+    <a href="#">Show full account name</a>
+    <a href="#">Show full history for all process</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">view</button>
+  <div class="dropdown-content">
+    <a href="#">Refresh now</a>
+    <a href="#">Update speed</a>
+    <a href="#">Group by type</a>
+    <a href="#">Expand all</a>
+    <a href="#">Collapse all</a>
+  </div>
+</div>
+
+
+<button class="tablink" onclick="openPage('Processes', this,'white')">Processes</button>
+<button class="tablink" onclick="openPage('Performance', this, 'white')" id="defaultOpen">Performance</button>
+<button class="tablink" onclick="openPage('App history', this, 'white')">App history</button>
+<button class="tablink" onclick="openPage('Startup', this, 'white')">Startup</button>
+<button class="tablink" onclick="openPage('Users', this, 'white')" id="defaultOpen">Users</button>
+<button class="tablink" onclick="openPage('Details', this, 'white')">Details</button>
+<button class="tablink" onclick="openPage('Services', this, 'white')">Services</button>
+
+<div id="Processes" class="tabcontent">
+  <h3>Processes</h3>
+</div>
+
+<div id="Performance" class="tabcontent">
+  <h3>Performance</h3>
+</div>
+
+<div id="App history" class="tabcontent">
+  <h3>App history</h3>
+  </div>
+
+<div id="Startup" class="tabcontent">
+  <h3>startup</h3>
+  </div>
+  
+<div id="Users" class="tabcontent">
+  <h3>Users</h3>
+  </div>
+
+<div id="Details" class="tabcontent">
+  <h3>Details</h3>
+</div>
+
+<div id="Services" class="tabcontent">
+  <h3>Services</h3>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+
+</body>
+</html>
